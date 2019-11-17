@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class DefaultUserService {
 @Autowired
 @Qualifier("daoUser")
-    private DaoUser daoUser;
+    private DaoUser userDao;
 
     private DaoUser daoUser2;
 @Autowired
@@ -16,5 +16,6 @@ public class DefaultUserService {
     }
     void doOrder(){
     daoUser2.doOrder();
+    userDao.doOrder();
     }
 }

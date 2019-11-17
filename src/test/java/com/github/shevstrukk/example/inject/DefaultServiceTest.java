@@ -9,11 +9,12 @@ class DefaultServiceTest {
     @Test
     void byConstructor(){
         final AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext();
-        context.register(DefaultDao.class);
-        context.register(DefaultService.class);
+        context.register(ConfigClass.class);
         context.refresh();
-        DefaultService defaultService = (DefaultService) context.getBean(DefaultService.class);
-        defaultService.doOrder();
+        DefaultService service = (DefaultService) context.getBean(DefaultService.class);
+        service.doOrder();
+        assertNotNull(service);
+        assertTrue(service.getClass().equals(DefaultService.class));
 
     }
 

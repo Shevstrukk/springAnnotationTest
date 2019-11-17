@@ -1,6 +1,9 @@
 package com.github.shevstrukk.example.injectList;
 
-public class DefaultUserDao implements DaoUser {
+import org.springframework.stereotype.Component;
+
+@Component
+public class DefaultUserDao implements UserDao {
     public void doOrder(){
         System.out.println("заказ сделан");
     }

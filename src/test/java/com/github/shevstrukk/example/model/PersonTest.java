@@ -13,8 +13,9 @@ class PersonTest {
         final AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext();
         context.register(PersonConfig.class);
         context.refresh();
-        Person person = context.getBean(Person.class);
-        person.setName("Vitali");
-        System.out.println(person.getName());
+        Person bean = context.getBean(Person.class);
+        assertNotNull(bean);
+        assertNotNull(bean.getName());
+        System.out.println(bean.getName());
     }
 }

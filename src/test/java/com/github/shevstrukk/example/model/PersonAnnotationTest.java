@@ -14,7 +14,7 @@ class PersonAnnotationTest {
         context.register(PersonAnnotation.class);
         context.refresh();
         PersonAnnotation person = (PersonAnnotation)context.getBean(PersonAnnotation.class);
-        person.setName("Vitali");
+        assertNotNull(person);
         System.out.println(person.getName());
     }
 }

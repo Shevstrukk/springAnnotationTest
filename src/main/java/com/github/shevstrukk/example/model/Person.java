@@ -1,7 +1,7 @@
 package com.github.shevstrukk.example.model;
 
 public class Person {
-    private String name;
+    private String name="Vitalij";
 
     public String getName() {
         return name;

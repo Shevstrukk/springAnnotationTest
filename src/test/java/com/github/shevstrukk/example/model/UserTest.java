@@ -12,8 +12,9 @@ class UserTest {
     void getName() {
         final AbstractApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         context.refresh();
-        User user = (User)context.getBean("user");
-        user.setName("Vitalij");
-        System.out.println(user.getName());
+        User bean = (User)context.getBean("user");
+        //user.setName("Vitalij");
+        System.out.println(bean.getName());
+        assertNotNull(bean.getName());
     }
 }

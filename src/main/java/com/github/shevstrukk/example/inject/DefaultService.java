@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class DefaultService {
 
-@Autowired
+@Autowired //поле
 private DefaultDao defaultDao;
 
-//@Autowired
+//@Autowired конструктор
     public DefaultService(DefaultDao defaultDao) {
         this.defaultDao = defaultDao;
         System.out.println("создался конструктор service");
@@ -16,7 +16,7 @@ private DefaultDao defaultDao;
     public DefaultService() {
 
     }
-//@Autowired
+//@Autowired сеттер
     public void setDefaultDao(DefaultDao defaultDao) {
         this.defaultDao = defaultDao;
     }

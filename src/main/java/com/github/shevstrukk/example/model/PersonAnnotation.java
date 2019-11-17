@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PersonAnnotation {
-    private String name;
+    private String name="sdsdsd";
 
     public String getName() {
         return name;

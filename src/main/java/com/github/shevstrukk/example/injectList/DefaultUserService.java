@@ -1,26 +1,25 @@
 package com.github.shevstrukk.example.injectList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class DefaultUserService {
-    private List<DefaultUserDao> list;
+   List<UserDao> dao;
 
-@Autowired
-    public DefaultUserService(List<DefaultUserDao> list) {
-    this.list = list;
-    listStart(list);
+    public List<UserDao> getDao() {
+        return dao;
     }
 
-    public DefaultUserService() {
-
+    @Autowired
+    public DefaultUserService( List<UserDao> list) {
+        this.dao = list;
     }
 
-    void listStart(List<DefaultUserDao> list){
-        for(DefaultUserDao elem: list){
-            elem.doOrder();
-         }
+  void doOrderList(){
+      for (UserDao em: dao){
+        em.doOrder();
+      }
     }
-
 }
